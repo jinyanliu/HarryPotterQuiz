@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">HarryPotterQuiz</string>
+    <!-- Input user name -->
+    <string name="edit_text_hint_name">Please enter your name</string>
+
+    <!-- Answer question 6 -->
+    <string name="edit_text_hint_question_six">Please enter the number</string>
+
+    <!-- Question 1 Texts -->
+    <string name="question_one">1.Who is the teacher who Harry thinks is working with Voldemort?\n(Harry Potter and the Sorcerer\'s Stone)</string>
+    <string name="answer_one_one">McGonagall</string>
+    <string name="answer_one_two">Quirrell</string>
+    <string name="answer_one_three">Snape</string>
+    <string name="answer_one_four">Sprout</string>
+
+    <!-- Question 2 Texts -->
+    <string name="question_two">2.What happens to Professor Lockhart?\n(Harry Potter and the Chamber of Secrets)</string>
+    <string name="answer_two_one">He dies.</string>
+    <string name="answer_two_two">He is fired.</string>
+    <string name="answer_two_three">He loses his memory.</string>
+    <string name="answer_two_four">He runs away.</string>
+
+    <!-- Question 3 Texts -->
+    <string name="question_three">3.Who was the old Care of Magical Creatures teacher?\n(Harry Potter and the Prisoner of Azkaban)</string>
+    <string name="answer_three_one">Professor Kettleburn</string>
+    <string name="answer_three_two">Professor Hagrid</string>
+    <string name="answer_three_three">Professor Lupin</string>
+    <string name="answer_three_four">Professor Snape</string>
+
+    <!-- Question 4 Texts -->
+    <string name="question_four">4.Who wins the Quidditch World Cup?\n(Harry Potter and the Goblet of Fire)</string>
+    <string name="answer_four_one">Bulgaria</string>
+    <string name="answer_four_two">Ireland</string>
+    <string name="answer_four_three">Brazil</string>
+    <string name="answer_four_four">America</string>
+
+    <!-- Question 5 Texts -->
+    <string name="question_five">5.Who or What attacks Ron in the Ministry of Magic?\n(Harry Potter and the Order of the Phoenix)</string>
+    <string name="answer_five_one">Bellatrix</string>
+    <string name="answer_five_two">a Time-turner</string>
+    <string name="answer_five_three">Dolohov</string>
+    <string name="answer_five_four">a brain</string>
+
+    <!-- Question 6 Texts -->
+    <string name="question_six">6.How many Horcruxes does Dumbledore think Voldemort has(not including the piece in Voldemort himself)?\n(Harry Potter and the Half-Blood Prince)</string>
+
+    <!-- Question 7 Texts -->
+    <string name="question_seven">7.What do Ron and Hermione name their kids?\n(Harry Potter and the Deathly Hallows)</string>
+    <string name="answer_seven_one">Bilius</string>
+    <string name="answer_seven_two">Rose</string>
+    <string name="answer_seven_three">Hugo</string>
+    <string name="answer_seven_four">Albus</string>
+
+    <!-- Text on Submit Button -->
+    <string name="submit_button">Submit</string>
+
+</resources>
