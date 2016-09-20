@@ -182,12 +182,6 @@
             android:text="@string/submit_button"
             android:textColor="#FFFFFF" />
 
-        <TextView
-            android:id="@+id/test_score"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0" />
-
     </LinearLayout>
 
 </ScrollView>

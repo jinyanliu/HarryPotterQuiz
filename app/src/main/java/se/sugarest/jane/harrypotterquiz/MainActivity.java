@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -61,22 +61,13 @@ public class MainActivity extends AppCompatActivity {
             score += 1;
         }
 
-        displayScore(score);
-
-    }
-
-    /**
-     * Create Final ScoreText Message.
-     */
-    private void displayScore(int score) {
-        TextView scoreTextView = (TextView) findViewById(R.id.test_score);
-        scoreTextView.setText(createScoreText(score));
+        Toast.makeText(this, createScoreText(score), Toast.LENGTH_SHORT).show();
     }
 
     /**
      * Create Final ScoreText Message.
      *
-     * @param score is the score of the user
+     * @param score is the final score of the user
      */
     private String createScoreText(int score) {
 
