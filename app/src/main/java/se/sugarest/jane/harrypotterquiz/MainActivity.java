@@ -25,8 +25,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        EditText editText = (EditText) findViewById(R.id.user_name);
-        editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+
+        EditText editTextName = (EditText) findViewById(R.id.user_input_number);
+        editTextName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    hideKeyboard(v);
+                }
+            }
+        });
+
+        EditText editTextQuestionSix = (EditText) findViewById(R.id.user_name);
+        editTextQuestionSix.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
@@ -36,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * This method is called to hide keyboard.
+     */
     public void hideKeyboard(View view) {
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
