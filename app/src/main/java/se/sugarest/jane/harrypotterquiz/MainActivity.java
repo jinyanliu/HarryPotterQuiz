@@ -5,10 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    int score = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submit(View view) {
 
-        int score = 0;
 
         // Figure out if the user checked Name Rose of Question 7
         CheckBox nameRose = (CheckBox) findViewById(R.id.name_rose);
@@ -76,6 +77,56 @@ public class MainActivity extends AppCompatActivity {
         String scoreText = userName;
         scoreText += "! You got " + score + " of 7 right answers!";
         return scoreText;
+    }
+
+    /**
+     * Get Answer From Question One.
+     */
+    public void onRadioButtonClickedQuestionOne(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch (view.getId()) {
+            case R.id.mcgonagall:
+                if (checked)
+                    break;
+            case R.id.quirrell:
+                if (checked)
+                    break;
+            case R.id.snape:
+                if (checked) ;
+                score += 1;
+                break;
+            case R.id.sprout:
+                if (checked)
+                    break;
+        }
+    }
+
+    /**
+     * Get Answer From Question Two.
+     */
+    public void onRadioButtonClickedQuestionTwo(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch (view.getId()) {
+            case R.id.hedies:
+                if (checked)
+                    break;
+            case R.id.heisfired:
+                if (checked)
+                    break;
+            case R.id.heloseshismemory:
+                if (checked) ;
+                score += 1;
+                break;
+            case R.id.herunsaway:
+                if (checked)
+                    break;
+        }
     }
 
 }

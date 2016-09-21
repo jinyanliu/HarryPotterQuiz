@@ -32,19 +32,27 @@
         <RadioGroup style="@style/RadioGroup">
 
             <RadioButton
+                android:id="@+id/mcgonagall"
                 style="@style/RadioButton"
+                android:onClick="onRadioButtonClickedQuestionOne"
                 android:text="@string/answer_one_one" />
 
             <RadioButton
+                android:id="@+id/quirrell"
                 style="@style/RadioButton"
+                android:onClick="onRadioButtonClickedQuestionOne"
                 android:text="@string/answer_one_two" />
 
             <RadioButton
+                android:id="@+id/snape"
                 style="@style/RadioButton"
+                android:onClick="onRadioButtonClickedQuestionOne"
                 android:text="@string/answer_one_three" />
 
             <RadioButton
+                android:id="@+id/sprout"
                 style="@style/RadioButton"
+                android:onClick="onRadioButtonClickedQuestionOne"
                 android:text="@string/answer_one_four" />
         </RadioGroup>
 
@@ -55,19 +63,27 @@
         <RadioGroup style="@style/RadioGroup">
 
             <RadioButton
+                android:id="@+id/hedies"
                 style="@style/RadioButton"
+                android:onClick="onRadioButtonClickedQuestionTwo"
                 android:text="@string/answer_two_one" />
 
             <RadioButton
+                android:id="@+id/heisfired"
                 style="@style/RadioButton"
+                android:onClick="onRadioButtonClickedQuestionTwo"
                 android:text="@string/answer_two_two" />
 
             <RadioButton
+                android:id="@+id/heloseshismemory"
                 style="@style/RadioButton"
+                android:onClick="onRadioButtonClickedQuestionTwo"
                 android:text="@string/answer_two_three" />
 
             <RadioButton
+                android:id="@+id/herunsaway"
                 style="@style/RadioButton"
+                android:onClick="onRadioButtonClickedQuestionTwo"
                 android:text="@string/answer_two_four" />
         </RadioGroup>
 
