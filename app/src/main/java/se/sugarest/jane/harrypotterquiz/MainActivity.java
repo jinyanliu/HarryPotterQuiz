@@ -84,38 +84,44 @@ public class MainActivity extends AppCompatActivity {
 
         // Figure out if the user checked Name Rose of Question 7
         CheckBox nameRose = (CheckBox) findViewById(R.id.name_rose);
-        boolean hasNameRose = nameRose.isChecked();
+        //boolean hasNameRose = nameRose.isChecked();
 
         // Figure out if the user checked Name Hugo of Question 7
         CheckBox nameHugo = (CheckBox) findViewById(R.id.name_hugo);
-        boolean hasNameHugo = nameHugo.isChecked();
+        //boolean hasNameHugo = nameHugo.isChecked();
 
         // Figure out if the user checked Name Bilius of Question 7
         CheckBox nameBilius = (CheckBox) findViewById(R.id.name_bilius);
-        boolean hasNameBilius = nameBilius.isChecked();
+        //boolean hasNameBilius = nameBilius.isChecked();
 
         // Figure out if the user checked Name Albus of Question 7
         CheckBox nameAlbus = (CheckBox) findViewById(R.id.name_albus);
-        boolean hasNameAlbus = nameAlbus.isChecked();
+        //boolean hasNameAlbus = nameAlbus.isChecked();
 
         //Check if both NameRose and NameHugo are only checked of Question 7, user can get 1 score.
-        if (hasNameRose) {
-            if (hasNameHugo) {
-                answerSeven = 1;
-            } else {
-                answerSeven = 0;
-            }
+        if (nameRose.isChecked() && nameHugo.isChecked() && !nameBilius.isChecked() && !nameAlbus.isChecked()) {
+            answerSeven = 1;
         } else {
             answerSeven = 0;
         }
 
-        if (hasNameBilius) {
-            answerSeven = 0;
-        }
-
-        if (hasNameAlbus) {
-            answerSeven = 0;
-        }
+//        if (hasNameRose) {
+//            if (hasNameHugo) {
+//                answerSeven = 1;
+//            } else {
+//                answerSeven = 0;
+//            }
+//        } else {
+//            answerSeven = 0;
+//        }
+//
+//        if (hasNameBilius) {
+//            answerSeven = 0;
+//        }
+//
+//        if (hasNameAlbus) {
+//            answerSeven = 0;
+//        }
 
         //Only if the user typed "6" of Question 6, user can get 1 score.
         if (getNumberOfHorcruxes().equals("6")) {
