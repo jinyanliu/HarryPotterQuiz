@@ -94,19 +94,27 @@
         <RadioGroup style="@style/RadioGroup">
 
             <RadioButton
+                android:id="@+id/professorkettleburn"
                 style="@style/RadioButton"
+                android:onClick="onRadioButtonClickedQuestionThree"
                 android:text="@string/answer_three_one" />
 
             <RadioButton
+                android:id="@+id/professorhagrid"
                 style="@style/RadioButton"
+                android:onClick="onRadioButtonClickedQuestionThree"
                 android:text="@string/answer_three_two" />
 
             <RadioButton
+                android:id="@+id/professorlupin"
                 style="@style/RadioButton"
+                android:onClick="onRadioButtonClickedQuestionThree"
                 android:text="@string/answer_three_three" />
 
             <RadioButton
+                android:id="@+id/professorsnape"
                 style="@style/RadioButton"
+                android:onClick="onRadioButtonClickedQuestionThree"
                 android:text="@string/answer_three_four" />
         </RadioGroup>
 
@@ -117,19 +125,27 @@
         <RadioGroup style="@style/RadioGroup">
 
             <RadioButton
+                android:id="@+id/bulgaria"
                 style="@style/RadioButton"
+                android:onClick="onRadioButtonClickedQuestionFour"
                 android:text="@string/answer_four_one" />
 
             <RadioButton
+                android:id="@+id/ireland"
                 style="@style/RadioButton"
+                android:onClick="onRadioButtonClickedQuestionFour"
                 android:text="@string/answer_four_two" />
 
             <RadioButton
+                android:id="@+id/brazil"
                 style="@style/RadioButton"
+                android:onClick="onRadioButtonClickedQuestionFour"
                 android:text="@string/answer_four_three" />
 
             <RadioButton
+                android:id="@+id/america"
                 style="@style/RadioButton"
+                android:onClick="onRadioButtonClickedQuestionFour"
                 android:text="@string/answer_four_four" />
         </RadioGroup>
 
@@ -140,19 +156,27 @@
         <RadioGroup style="@style/RadioGroup">
 
             <RadioButton
+                android:id="@+id/bellatrix"
                 style="@style/RadioButton"
+                android:onClick="onRadioButtonClickedQuestionFive"
                 android:text="@string/answer_five_one" />
 
             <RadioButton
+                android:id="@+id/atimeturner"
                 style="@style/RadioButton"
+                android:onClick="onRadioButtonClickedQuestionFive"
                 android:text="@string/answer_five_two" />
 
             <RadioButton
+                android:id="@+id/dolohov"
                 style="@style/RadioButton"
+                android:onClick="onRadioButtonClickedQuestionFive"
                 android:text="@string/answer_five_three" />
 
             <RadioButton
+                android:id="@+id/abrain"
                 style="@style/RadioButton"
+                android:onClick="onRadioButtonClickedQuestionFive"
                 android:text="@string/answer_five_four" />
         </RadioGroup>
 

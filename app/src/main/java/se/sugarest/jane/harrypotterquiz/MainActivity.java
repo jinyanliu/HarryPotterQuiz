@@ -129,4 +129,79 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+    /**
+     * Get Answer From Question Three.
+     */
+    public void onRadioButtonClickedQuestionThree(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch (view.getId()) {
+            case R.id.professorkettleburn:
+                if (checked)
+                    score += 1;
+                break;
+            case R.id.professorhagrid:
+                if (checked)
+                    break;
+            case R.id.professorlupin:
+                if (checked) ;
+                break;
+            case R.id.professorsnape:
+                if (checked)
+                    break;
+        }
+    }
+
+    /**
+     * Get Answer From Question Four.
+     */
+    public void onRadioButtonClickedQuestionFour(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch (view.getId()) {
+            case R.id.bulgaria:
+                if (checked)
+                    break;
+            case R.id.ireland:
+                if (checked)
+                    score += 1;
+                break;
+            case R.id.brazil:
+                if (checked) ;
+                break;
+            case R.id.america:
+                if (checked)
+                    break;
+        }
+    }
+
+    /**
+     * Get Answer From Question Five.
+     */
+    public void onRadioButtonClickedQuestionFive(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch (view.getId()) {
+            case R.id.bellatrix:
+                if (checked)
+                    break;
+            case R.id.atimeturner:
+                if (checked)
+                    break;
+            case R.id.dolohov:
+                if (checked) ;
+                break;
+            case R.id.abrain:
+                if (checked)
+                    score += 1;
+                break;
+        }
+    }
 }
