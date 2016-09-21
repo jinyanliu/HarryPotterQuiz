@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">HarryPotterQuiz</string>
+
     <!-- Input user name -->
     <string name="edit_text_hint_name">Please enter your name</string>
 
-    <!-- Answer question 6 -->
+    <!-- Input answer question 6 -->
     <string name="edit_text_hint_question_six">Please enter the number</string>
 
     <!-- Question 1 Texts -->
