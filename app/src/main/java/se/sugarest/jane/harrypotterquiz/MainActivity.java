@@ -1,8 +1,11 @@
 package se.sugarest.jane.harrypotterquiz;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -10,13 +13,34 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    int score = 0;
+    int answerOne = 0;
+    int answerTwo = 0;
+    int answerThree = 0;
+    int answerFour = 0;
+    int answerFive = 0;
+    int answerSix = 0;
+    int answerSeven = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        EditText editText = (EditText) findViewById(R.id.user_name);
+        editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    hideKeyboard(v);
+                }
+            }
+        });
     }
+
+    public void hideKeyboard(View view) {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
 
     /**
      * This method is called to get user name.
@@ -41,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submit(View view) {
 
+        int score = 0;
+
+        String userName = getUserName();
 
         // Figure out if the user checked Name Rose of Question 7
         CheckBox nameRose = (CheckBox) findViewById(R.id.name_rose);
@@ -50,37 +77,59 @@ public class MainActivity extends AppCompatActivity {
         CheckBox nameHugo = (CheckBox) findViewById(R.id.name_hugo);
         boolean hasNameHugo = nameHugo.isChecked();
 
-        //Only if both NameRose and NameHugo are checked of Question 7, user can get 1 score.
+        // Figure out if the user checked Name Bilius of Question 7
+        CheckBox nameBilius = (CheckBox) findViewById(R.id.name_bilius);
+        boolean hasNameBilius = nameBilius.isChecked();
+
+        // Figure out if the user checked Name Albus of Question 7
+        CheckBox nameAlbus = (CheckBox) findViewById(R.id.name_albus);
+        boolean hasNameAlbus = nameAlbus.isChecked();
+
+        //Check if both NameRose and NameHugo are only checked of Question 7, user can get 1 score.
         if (hasNameRose) {
             if (hasNameHugo) {
-                score += 1;
+                answerSeven = 1;
+            } else {
+                answerSeven = 0;
             }
+        } else {
+            answerSeven = 0;
+        }
+
+        if (hasNameBilius) {
+            answerSeven = 0;
+        }
+
+        if (hasNameAlbus) {
+            answerSeven = 0;
         }
 
         //Only if the user typed "6" of Question 6, user can get 1 score.
         if (getNumberOfHorcruxes().equals("6")) {
-            score += 1;
+            answerSix = 1;
+        } else {
+            answerSix = 0;
         }
 
-        Toast.makeText(this, createScoreText(score), Toast.LENGTH_SHORT).show();
-    }
+        //Calculate final score.
+        score = answerOne + answerTwo + answerThree + answerFour + answerFive + answerSix + answerSeven;
 
-    /**
-     * Create Final ScoreText Message.
-     *
-     * @param score is the final score of the user
-     */
-    private String createScoreText(int score) {
-
-        String userName = getUserName();
-
+        //Make the text for Toast.
         String scoreText = userName;
         scoreText += "! You got " + score + " of 7 right answers!";
-        return scoreText;
+
+        //Make a Toast message to display final score for the user.
+        Toast.makeText(this, scoreText, Toast.LENGTH_SHORT).show();
+
+        View anotherview = this.getCurrentFocus();
+        if (anotherview != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(anotherview.getWindowToken(), 0);
+        }
     }
 
     /**
-     * Get Answer From Question One.
+     * Get Score From Question One.
      */
     public void onRadioButtonClickedQuestionOne(View view) {
         // Is the button now checked?
@@ -90,22 +139,25 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.mcgonagall:
                 if (checked)
-                    break;
+                    answerOne = 0;
+                break;
             case R.id.quirrell:
                 if (checked)
-                    break;
+                    answerOne = 0;
+                break;
             case R.id.snape:
                 if (checked) ;
-                score += 1;
+                answerOne = 1;
                 break;
             case R.id.sprout:
                 if (checked)
-                    break;
+                    answerOne = 0;
+                break;
         }
     }
 
     /**
-     * Get Answer From Question Two.
+     * Get Score From Question Two.
      */
     public void onRadioButtonClickedQuestionTwo(View view) {
         // Is the button now checked?
@@ -115,23 +167,25 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.hedies:
                 if (checked)
-                    break;
+                    answerTwo = 0;
+                break;
             case R.id.heisfired:
                 if (checked)
-                    break;
+                    answerTwo = 0;
+                break;
             case R.id.heloseshismemory:
                 if (checked) ;
-                score += 1;
+                answerTwo = 1;
                 break;
             case R.id.herunsaway:
                 if (checked)
-                    break;
+                    answerTwo = 0;
+                break;
         }
     }
 
-
     /**
-     * Get Answer From Question Three.
+     * Get Score From Question Three.
      */
     public void onRadioButtonClickedQuestionThree(View view) {
         // Is the button now checked?
@@ -141,22 +195,25 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.professorkettleburn:
                 if (checked)
-                    score += 1;
+                    answerThree = 1;
                 break;
             case R.id.professorhagrid:
                 if (checked)
-                    break;
+                    answerThree = 0;
+                break;
             case R.id.professorlupin:
                 if (checked) ;
+                answerThree = 0;
                 break;
             case R.id.professorsnape:
                 if (checked)
-                    break;
+                    answerThree = 0;
+                break;
         }
     }
 
     /**
-     * Get Answer From Question Four.
+     * Get Score From Question Four.
      */
     public void onRadioButtonClickedQuestionFour(View view) {
         // Is the button now checked?
@@ -166,22 +223,25 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.bulgaria:
                 if (checked)
-                    break;
+                    answerFour = 0;
+                break;
             case R.id.ireland:
                 if (checked)
-                    score += 1;
+                    answerFour = 1;
                 break;
             case R.id.brazil:
                 if (checked) ;
+                answerFour = 0;
                 break;
             case R.id.america:
                 if (checked)
-                    break;
+                    answerFour = 0;
+                break;
         }
     }
 
     /**
-     * Get Answer From Question Five.
+     * Get Score From Question Five.
      */
     public void onRadioButtonClickedQuestionFive(View view) {
         // Is the button now checked?
@@ -191,16 +251,19 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.bellatrix:
                 if (checked)
-                    break;
+                    answerFive = 0;
+                break;
             case R.id.atimeturner:
                 if (checked)
-                    break;
+                    answerFive = 0;
+                break;
             case R.id.dolohov:
                 if (checked) ;
+                answerFive = 0;
                 break;
             case R.id.abrain:
                 if (checked)
-                    score += 1;
+                    answerFive = 1;
                 break;
         }
     }

@@ -196,6 +196,7 @@
             android:text="@string/question_seven" />
 
         <CheckBox
+            android:id="@+id/name_bilius"
             style="@style/CheckBox"
             android:text="@string/answer_seven_one" />
 
@@ -210,6 +211,7 @@
             android:text="@string/answer_seven_three" />
 
         <CheckBox
+            android:id="@+id/name_albus"
             style="@style/CheckBox"
             android:text="@string/answer_seven_four" />
 
